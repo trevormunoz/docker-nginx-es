@@ -1,6 +1,6 @@
 proxy:
     build: .
-    command: /etc/init.d/nginx start 
+    command: /usr/local/bin/bootstrap-nginx.sh 
     links:
      - es
     ports:
