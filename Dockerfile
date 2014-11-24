@@ -14,6 +14,7 @@ rm -f /etc/nginx/sites-enabled/default
 
 COPY bootstrap-nginx.sh /usr/local/bin/
 RUN chmod +x /usr/local/bin/bootstrap-nginx.sh
+RUN /usr/local/bin/bootstrap-nginx.sh
 
 EXPOSE 80
 EXPOSE 443
