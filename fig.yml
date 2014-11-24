@@ -1,6 +1,6 @@
 proxy:
     build: .
-    entrypoint: /usr/local/bin/bootstrap-nginx.sh 
+    entrypoint: /usr/local/bin/bootstrap-nginx.sh
     links:
      - es
     ports:
