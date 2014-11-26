@@ -6,6 +6,8 @@ server {
     listen 80;
     server_name localhost;
 
+    client_max_body_size 4m;
+
     error_log /var/log/nginx/elasticsearch-proxy-errors.log error;
     access_log /var/log/nginx/elasticsearch-proxy-access.log;
 
