@@ -1,5 +1,5 @@
 proxy:
-    build: .
+    build: ./nginx
     entrypoint: /usr/local/bin/bootstrap-nginx.sh
     links:
      - es
@@ -7,9 +7,7 @@ proxy:
      - "80:80"
      - "443:443"
 es:
-    image: dockerfile/elasticsearch
-    volumes: 
-     - config/:/data
+    build: ./es
     expose:
      - "9200"
      - "9300"
