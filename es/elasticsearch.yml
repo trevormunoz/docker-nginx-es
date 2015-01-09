@@ -1,0 +1,45 @@
+##################################################################
+#
+# Base configuration for a write heavy cluster
+#
+ 
+# Cluster / Node Basics
+cluster.name: esdev
+ 
+# Node can have abritrary attributes we can use for routing
+node.name: test-01
+ 
+# Force all memory to be locked, forcing the JVM to never swap
+bootstrap.mlockall: true
+ 
+## Threadpool Settings ##
+ 
+# Search pool
+threadpool.search.type: fixed
+threadpool.search.size: 20
+threadpool.search.queue_size: 100
+ 
+# Bulk pool
+threadpool.bulk.type: fixed
+threadpool.bulk.size: 60
+threadpool.bulk.queue_size: 300
+ 
+# Index pool
+threadpool.index.type: fixed
+threadpool.index.size: 20
+threadpool.index.queue_size: 100
+ 
+# Indices settings
+indices.memory.index_buffer_size: 30%
+indices.memory.min_shard_index_buffer_size: 12mb
+indices.memory.min_index_buffer_size: 96mb
+ 
+# Cache Sizes
+indices.fielddata.cache.size: 15%
+indices.fielddata.cache.expire: 6h
+indices.cache.filter.size: 15%
+indices.cache.filter.expire: 6h
+ 
+# Indexing Settings for Writes
+index.refresh_interval: 30s
+index.translog.flush_threshold_ops: 50000
