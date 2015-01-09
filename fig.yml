@@ -8,6 +8,8 @@ proxy:
      - "443:443"
 es:
     image: dockerfile/elasticsearch
+    volumes: 
+     - config/:/data
     expose:
      - "9200"
      - "9300"
