@@ -15,6 +15,9 @@ RUN \
   rm -f $ES_PKG_NAME.tar.gz && \
   mv /$ES_PKG_NAME /elasticsearch
 
+# Install Marvel plugin
+RUN /elasticsearch/bin/plugin -i elasticsearch/marvel/latest
+
 # Mount elasticsearch.yml config
 COPY elasticsearch.yml /elasticsearch/config/elasticsearch.yml
 
