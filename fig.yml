@@ -13,3 +13,8 @@ es:
     expose:
      - "9200"
      - "9300"
+dumbwaiter:
+    build: ./dumbwaiter
+    entrypoint: /usr/local/bin/dw.sh
+    links:
+     - es
