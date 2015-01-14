@@ -17,6 +17,9 @@ RUN wget --quiet \
  https://github.com/trevormunoz/dumbwaiter/archive/v$DW_PKG_VERSION.tar.gz && \
  tar xvf v$DW_PKG_VERSION.tar.gz -C /
 
+VOLUME ["/logs"]
+ENV MENUS_LOG_HOME /logs
+
 WORKDIR /dumbwaiter-$DW_PKG_VERSION
 RUN \
  /usr/local/bin/anaconda/envs/dumbwaiter/bin/pip install \
