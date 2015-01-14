@@ -15,11 +15,13 @@ RUN wget --quiet \
 # Install dumbwaiter
 RUN wget --quiet \
  https://github.com/trevormunoz/dumbwaiter/archive/v$DW_PKG_VERSION.tar.gz && \
- tar xvf v$DW_PKG_VERSION.tar.gz -C / && \
- /usr/local/bin/anaconda/envs/dumbwaiter/bin/pip install -r \
- /dumbwaiter-$DW_PKG_VERSION/requirements.txt && \
- /usr/local/bin/anaconda/envs/dumbwaiter/bin/python \
- /dumbwaiter-$DW_PKG_VERSION/setup.py install && \
+ tar xvf v$DW_PKG_VERSION.tar.gz -C /
+
+WORKDIR /dumbwaiter-$DW_PKG_VERSION
+RUN \
+ /usr/local/bin/anaconda/envs/dumbwaiter/bin/pip install \
+ -r requirements.txt && \
+ /usr/local/bin/anaconda/envs/dumbwaiter/bin/python setup.py install && \
  mkdir -p /var/lib/dumbwaiter
 
 COPY data/ /var/lib/dumbwaiter
