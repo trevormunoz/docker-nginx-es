@@ -17,16 +17,16 @@ RUN wget --quiet \
  https://github.com/trevormunoz/dumbwaiter/archive/v$DW_PKG_VERSION.tar.gz && \
  tar xvf v$DW_PKG_VERSION.tar.gz -C /
 
-VOLUME ["/logs"]
-ENV MENUS_LOG_HOME /logs
+VOLUME ["/var/log/dumbwaiter"]
+ENV MENUS_LOG_HOME /var/log/dumbwaiter
 
 WORKDIR /dumbwaiter-$DW_PKG_VERSION
 RUN \
  /usr/local/bin/anaconda/envs/dumbwaiter/bin/pip install \
  -r requirements.txt && \
  /usr/local/bin/anaconda/envs/dumbwaiter/bin/python setup.py install && \
- mkdir -p /var/lib/dumbwaiter
+ mkdir -p /var/lib/dumbwaiter/data
 
-COPY data /var/lib/dumbwaiter
+COPY data /var/lib/dumbwaiter/data
 COPY dw.sh /usr/local/bin/
 RUN chmod +x /usr/local/bin/dw.sh
