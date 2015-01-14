@@ -20,3 +20,8 @@ esdata:
     volumes:
      - /var/data/elasticsearch
     command: true
+dumbwaiter:
+    build: ./dumbwaiter
+    entrypoint: /usr/local/bin/dw.sh
+    links:
+     - es
