@@ -21,5 +21,7 @@ esdata:
 dumbwaiter:
     build: ./dumbwaiter
     entrypoint: /usr/local/bin/dw.sh
+    volumes:
+     - logs/:/var/log/dumbwaiter
     links:
      - es
