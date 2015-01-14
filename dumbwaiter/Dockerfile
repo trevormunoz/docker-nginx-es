@@ -24,6 +24,6 @@ RUN \
  /usr/local/bin/anaconda/envs/dumbwaiter/bin/python setup.py install && \
  mkdir -p /var/lib/dumbwaiter
 
-COPY data/ /var/lib/dumbwaiter
+COPY data /var/lib/dumbwaiter
 COPY dw.sh /usr/local/bin/
 RUN chmod +x /usr/local/bin/dw.sh
