@@ -18,3 +18,8 @@ es:
 esdata:
     build: ./esdata
     command: true
+dumbwaiter:
+    build: ./dumbwaiter
+    entrypoint: /usr/local/bin/dw.sh
+    links:
+     - es
