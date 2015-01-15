@@ -13,6 +13,8 @@ es:
     expose:
      - "9200"
      - "9300"
+    volumes_from:
+     - data
 dumbwaiter:
     build: ./dumbwaiter
     entrypoint: /usr/local/bin/dw.sh
@@ -20,3 +22,8 @@ dumbwaiter:
      - logs/:/var/log/dumbwaiter
     links:
      - es
+data:
+    image: ubuntu:14.04
+    volumes: 
+     - data/:/var/lib/elasticsearch/data
+    command: true
