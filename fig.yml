@@ -13,3 +13,10 @@ es:
     expose:
      - "9200"
      - "9300"
+    volumes_from:
+     - esdata
+esdata:
+    image: ubuntu:14.04
+    volumes:
+     - /var/data/elasticsearch
+    command: true
