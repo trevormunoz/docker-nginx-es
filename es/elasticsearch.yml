@@ -8,6 +8,10 @@ cluster.name: esdev
  
 # Node can have abritrary attributes we can use for routing
 node.name: indexer-01
+
+# Paths
+path.data: /var/data/elasticsearch
+path.logs: /var/log/elasticsearch
  
 # Force all memory to be locked, forcing the JVM to never swap
 bootstrap.mlockall: true
