@@ -14,16 +14,9 @@ es:
      - "9200"
      - "9300"
     volumes_from:
-     - data
-dumbwaiter:
-    build: ./dumbwaiter
-    entrypoint: /usr/local/bin/dw.sh
-    volumes:
-     - logs/:/var/log/dumbwaiter
-    links:
-     - es
-data:
+     - esdata
+esdata:
     image: ubuntu:14.04
-    volumes: 
-     - data/:/var/lib/elasticsearch/data
+    volumes:
+     - /var/data/elasticsearch
     command: true
