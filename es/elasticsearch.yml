@@ -10,8 +10,8 @@ cluster.name: esdev
 node.name: indexer-01
 
 # Paths
-path.data: /var/log/elasticsearch
-path.logs: /var/data/elasticsearch
+path.data: /var/data/elasticsearch
+path.logs: /var/log/elasticsearch
  
 # Force all memory to be locked, forcing the JVM to never swap
 bootstrap.mlockall: true
