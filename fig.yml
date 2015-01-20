@@ -16,7 +16,5 @@ es:
     volumes_from:
      - esdata
 esdata:
-    image: ubuntu:14.04
-    volumes:
-     - /var/data/elasticsearch
+    build: ./esdata
     command: true
