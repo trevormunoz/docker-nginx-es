@@ -3,7 +3,7 @@ RUN apt-get update
 RUN apt-get install wget -y
 
 ENV CONDA_PKG_VERSION 3.7.0
-ENV DW_PKG_VERSION 0.4.1
+ENV DW_PKG_VERSION 0.4.2
 
 # Install Anaconda environment
 RUN wget --quiet \
