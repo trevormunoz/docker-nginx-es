@@ -28,6 +28,6 @@ RUN \
  /usr/local/bin/anaconda/envs/dumbwaiter/bin/python setup.py install && \
  mkdir -p /var/lib/dumbwaiter/data
 
-ADD https://s3.amazonaws.com/menusdata.nypl.org/gzips/NYPLDATA_PKG_VERSION_data.tgz /var/lib/dumbwaiter/data
+ADD https://s3.amazonaws.com/menusdata.nypl.org/gzips/$NYPLDATA_PKG_VERSION_data.tgz /var/lib/dumbwaiter/data
 COPY dw.sh /usr/local/bin/
 RUN chmod +x /usr/local/bin/dw.sh
