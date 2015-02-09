@@ -4,7 +4,7 @@ RUN apt-get install wget -y
 
 ENV CONDA_PKG_VERSION 3.7.0
 ENV DW_PKG_VERSION 0.4.2
-ENV NYPLDATA_PKG_VERSION 2015_02_02_17_30_25
+ENV NYPLDATA_PKG_VERSION 2015_02_02_17_30_25_data
 
 # Install Anaconda environment
 RUN wget --quiet \
@@ -29,7 +29,7 @@ RUN \
  mkdir -p /var/lib/dumbwaiter/data
 
 RUN wget --quiet \
-https://s3.amazonaws.com/menusdata.nypl.org/gzips/$NYPLDATA_PKG_VERSION_data.tgz -P \
+https://s3.amazonaws.com/menusdata.nypl.org/gzips/$NYPLDATA_PKG_VERSION.tgz -P \
 /var/lib/dumbwaiter/data
 
 COPY dw.sh /usr/local/bin/
