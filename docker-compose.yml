@@ -8,8 +8,6 @@ proxy:
      - "443:443"
 es:
     build: ./es
-    environment:
-     - ES_HEAP_SIZE=2147m
     expose:
      - "9200"
      - "9300"
