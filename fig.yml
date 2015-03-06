@@ -9,7 +9,7 @@ proxy:
 es:
     build: ./es
     environment:
-     - ES_HEAP_SIZE=512m
+     - ES_HEAP_SIZE=2147m
     expose:
      - "9200"
      - "9300"
