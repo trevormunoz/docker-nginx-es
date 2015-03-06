@@ -3,9 +3,9 @@
 # https://github.com/dockerfile/elasticsearch
 #
 
-FROM dockerfile/java:oracle-java7
+FROM dockerfile/java:oracle-java8
 
-ENV ES_PKG_NAME elasticsearch-1.4.1
+ENV ES_PKG_NAME elasticsearch-1.4.4
 
 # Install ElasticSearch.
 RUN \
