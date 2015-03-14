@@ -14,7 +14,7 @@ server {
     location / {
 
         if ($request_method = OPTIONS) {
-            add_header 'Access-Control-Allow-Origin' '*';
+            add_header 'Access-Control-Allow-Origin' $http_origin;
             add_header 'Access-Control-Allow-Credentials' 'true';
             add_header 'Access-Control-Allow-Methods' 'GET, POST, OPTIONS';
 
@@ -26,7 +26,7 @@ server {
         }
 
         if ($request_method = GET) {
-            add_header 'Access-Control-Allow-Origin' '*';
+            add_header 'Access-Control-Allow-Origin' $http_origin;
             add_header 'Access-Control-Allow-Credentials' 'true';
             add_header 'Access-Control-Allow-Methods' 'GET, POST, OPTIONS';
         }
