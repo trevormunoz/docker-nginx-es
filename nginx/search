@@ -27,12 +27,22 @@ server {
             set $cors "${cors}options";
         }
 
+        if ($request_method = 'HEAD') {
+            set $cors "${cors}head";
+        }
+
         if ($request_method = 'GET') {
             set $cors "${cors}get";  
         }
 
         if ($request_method = 'POST') {
             set $cors "${cors}post";
+        }
+
+        if ($cors = "truehead") {
+            add_header 'Access-Control-Allow-Origin' "$http_origin";
+            add_header 'Access-Control-Allow-Credentials' 'true';
+            proxy_pass http://elasticsearch;
         }
 
         if ($cors = "trueget") {
