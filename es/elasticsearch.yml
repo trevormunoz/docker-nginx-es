@@ -50,4 +50,3 @@ index.translog.flush_threshold_ops: 50000
 
 # HTTP
 http.cors.enabled: true
-http.cors.allow-origin: /https?:\/\/localhost(:[0-9]+)?/
