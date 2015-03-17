@@ -47,3 +47,7 @@ indices.cache.filter.expire: 6h
 # Indexing Settings for Writes
 index.refresh_interval: 30s
 index.translog.flush_threshold_ops: 50000
+
+# HTTP
+http.cors.enabled: true
+http.cors.allow-origin: /https?:\/\/localhost(:[0-9]+)?/
