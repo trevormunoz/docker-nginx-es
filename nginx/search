@@ -19,7 +19,7 @@ server {
         proxy_set_header X-Forwarded-For    $remote_addr;
         proxy_set_header Host               $host;
 
-        if ($http_origin ~* (https?://[^/]*localhost(:[0-9]+)?)$) {
+        if ($http_origin ~* (https?://localhost:8000?)$) {
             set $cors "true";
         }
 
