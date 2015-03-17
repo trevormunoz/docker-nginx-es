@@ -21,7 +21,7 @@ server {
         proxy_set_header Connection "Keep-Alive";
         proxy_set_header Proxy-Connection "Keep-Alive";
 
-        proxy_hide_header 'Access-Control-Allow-Origin';
+        #proxy_hide_header 'Access-Control-Allow-Origin';
 
 
         if ($http_origin ~* (https?:\/\/localhost(:[0-9]+)?)) {
@@ -45,25 +45,25 @@ server {
         }
 
         if ($cors = "truehead") {
-            add_header 'Access-Control-Allow-Origin' "$http_origin";
+            #add_header 'Access-Control-Allow-Origin' "$http_origin";
             add_header 'Access-Control-Allow-Credentials' 'true';
             proxy_pass http://elasticsearch;
         }
 
         if ($cors = "trueget") {
-            add_header 'Access-Control-Allow-Origin' "$http_origin";
+            #add_header 'Access-Control-Allow-Origin' "$http_origin";
             add_header 'Access-Control-Allow-Credentials' 'true';
             proxy_pass http://elasticsearch;
         }
 
         if ($cors = "truepost") {
-            add_header 'Access-Control-Allow-Origin' "$http_origin";
+            #add_header 'Access-Control-Allow-Origin' "$http_origin";
             add_header 'Access-Control-Allow-Credentials' 'true';
             proxy_pass http://elasticsearch;
         }
 
         if ($cors = "trueoptions") {
-            add_header 'Access-Control-Allow-Origin' "$http_origin";
+            #add_header 'Access-Control-Allow-Origin' "$http_origin";
             add_header 'Access-Control-Allow-Credentials' 'true';
 
             add_header 'Access-Control-Max-Age' 1728000;
