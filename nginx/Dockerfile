@@ -7,8 +7,8 @@ echo "daemon off;" >> /etc/nginx/nginx.conf && \
 chown -R www-data:www-data /var/lib/nginx
 
 RUN mkdir -p /etc/nginx/ssl/publicfare
-COPY /home/ubuntu/.ssh/org.publicfare.api.key /etc/nginx/ssl/publicfare/org.publicfare.api.key
-COPY /home/ubuntu/.ssh/ssl-bundle.crt /etc/nginx/ssl/publicfare/ssl-bundle.crt
+COPY org.publicfare.api.key /etc/nginx/ssl/publicfare/org.publicfare.api.key
+COPY ssl-bundle.crt /etc/nginx/ssl/publicfare/ssl-bundle.crt
 COPY search /etc/nginx/sites-available/
 
 RUN ln -s /etc/nginx/sites-available/search \
