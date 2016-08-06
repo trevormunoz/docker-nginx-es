@@ -1,5 +1,7 @@
 A docker setup to run elasticsearch behind an nginx reverse proxy. Very basic.
 
+NB: No longer maintained. For my own purposes I [now use ansible](https://github.com/trevormunoz/automation/tree/master/elasticsearch-rig) to provision a VM
+
 ### To run 
 
 1. Launch instance — security rules need only allow ports 80 & 22
